@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<body>
+
+<h2>تواصل معنا</h2>
+
+<p>
+📞 <a href="tel:0567414217">0567414217</a>
+</p>
+
+<p>
+<a href="https://wa.me/966567414217">واتساب</a>
+</p>
+
+<a href="index.html">رجوع</a>
+
+</body>
+</html>
