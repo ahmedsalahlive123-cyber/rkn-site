@@ -1,145 +1,107 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RKN للخدمات المنزلية</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body { font-family: 'Cairo', sans-serif; margin:0; padding:0; background:#f0f2f5; color:#333; line-height:1.6; }
-  header { background: linear-gradient(135deg, #007BFF, #00BFFF); color:white; text-align:center; padding:50px 20px; }
-  header h1 { margin:0; font-size:2.8em; }
-  header p { margin-top:10px; font-size:1.3em; }
-  nav { margin-top:20px; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
-  nav a { color:white; text-decoration:none; padding:10px 20px; border-radius:25px; background: rgba(255,255,255,0.2); transition:0.3s; }
-  nav a:hover { background: rgba(255,255,255,0.5); }
-  .services { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:50px 20px; }
-  .service { border-radius:20px; width:350px; text-align:center; padding:25px 20px; box-shadow:0 8px 20px rgba(0,0,0,0.2); transition:all 0.4s ease; opacity:0; transform:translateY(30px); color:white; }
-  .service.visible { opacity:1; transform:translateY(0); }
-  .service:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 12px 25px rgba(0,0,0,0.3); }
-  .service img { width:100%; height:220px; object-fit:cover; border-radius:15px; margin-bottom:15px; border:2px solid rgba(255,255,255,0.3); background:#ccc; }
-  .service h3 { margin-bottom:15px; font-size:1.6em; }
-  .service p { font-size:1em; text-align:left; line-height:1.6; }
-  .cleaning { background: linear-gradient(135deg, #00C6FF, #0072FF); }
-  .pest { background: linear-gradient(135deg, #FF512F, #DD2476); }
-  .moving { background: linear-gradient(135deg, #11998e, #38ef7d); }
-  .gallery { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px; }
-  .gallery img { width:80px; height:50px; object-fit:cover; border-radius:10px; cursor:pointer; border:2px solid transparent; transition:0.3s; background:#aaa; }
-  .gallery img.active, .gallery img:hover { border:2px solid white; transform:scale(1.1); }
-  .call-btn, .whatsapp-btn { position:fixed; bottom:25px; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:white; text-decoration:none; box-shadow:0 5px 10px rgba(0,0,0,0.3); z-index:1000; transition:0.3s; }
-  .call-btn:hover { transform:scale(1.1); background-color:#218838; }
-  .whatsapp-btn:hover { transform:scale(1.1); background-color:#1ebe57; }
-  .call-btn { right:90px; background-color:#28a745; }
-  .whatsapp-btn { right:20px; background-color:#25D366; }
-  footer { text-align:center; padding:25px; background:#007BFF; color:white; font-size:1em; }
-  @media(max-width:750px){ .services{flex-direction:column; align-items:center;} nav{flex-direction:column;} .gallery{justify-content:center;} }
-</style>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUKN</title>
 
-<header>
-  <h1>RKN للخدمات المنزلية</h1>
-  <p>أفضل خدمات التنظيف، مكافحة الحشرات، ونقل الأثاث</p>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-</header>
+  <!-- خطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-<section class="services">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #f2f4f7;
+      color: #333;
+    }
 
-  <!-- خدمة التنظيف -->
-  <div class="service cleaning">
-    <img id="cleaning-main" alt="خدمات التنظيف">
-    <h3>خدمات التنظيف</h3>
-    <p>
-      تنظيف شامل لكل الغرف: المعيشة، المطبخ، الحمام، وغرف النوم.<br>
-      ✅ إزالة الغبار من الأرضيات والأسطح والنوافذ والمكاتب.<br>
-      ✅ تنظيف السجاد والستائر والمفروشات بمواد آمنة.<br>
-      ✅ تعقيم الأماكن عالية اللمس مثل مقابض الأبواب.<br>
-      ✅ استخدام معدات حديثة مثل المكانس الكهربائية وأجهزة البخار.
-    </p>
-    <div class="gallery">
-      <img>
-      <img>
-      <img>
-    </div>
-  </div>
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
 
-  <!-- خدمة مكافحة الحشرات -->
-  <div class="service pest">
-    <img id="pest-main" alt="مكافحة الحشرات">
-    <h3>مكافحة الحشرات</h3>
-    <p>
-      القضاء على جميع أنواع الحشرات: صراصير، نمل، بعوض، وحشرات زاحفة وطائرة.<br>
-      ✅ فحص شامل لكل الغرف والزوايا.<br>
-      ✅ استخدام مبيدات آمنة للأطفال والحيوانات.<br>
-      ✅ تقديم نصائح لمنع عودة الحشرات.<br>
-      ✅ متابعة دورية عند الطلب لضمان بيئة خالية من الحشرات.
-    </p>
-    <div class="gallery">
-      <img>
-      <img>
-      <img>
-    </div>
-  </div>
+    /* ===== LOGO SVG ===== */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+    }
 
-  <!-- خدمة نقل الأثاث -->
-  <div class="service moving">
-    <img id="moving-main" alt="نقل الأثاث">
-    <h3>نقل الأثاث</h3>
-    <p>
-      فك وتغليف الأثاث بشكل احترافي باستخدام مواد عازلة.<br>
-      ✅ نقل القطع الكبيرة بأمان دون تلف.<br>
-      ✅ تركيب الأثاث في الموقع الجديد.<br>
-      ✅ فريق مدرب على حمل القطع الثقيلة لتجنب أي أضرار.<br>
-      ✅ النقل داخل المدينة أو بين المدن حسب الطلب.
-    </p>
-    <div class="gallery">
-      <img>
-      <img>
-      <img>
-    </div>
-  </div>
+    .logo-svg {
+      width: 320px;
+      max-width: 90%;
+    }
 
-</section>
+    nav {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-<a href="tel:0567414217" class="call-btn">📞</a>
-<a href="https://wa.me/966567414217" class="whatsapp-btn">💬</a>
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.15);
+      transition: 0.3s;
+      font-weight: 600;
+    }
 
-<footer>
-  <p>© 2026 RKN - جميع الحقوق محفوظة</p>
-</footer>
+    nav a:hover {
+      background: rgba(255,255,255,0.35);
+    }
 
-<script>
-  // ظهور البطاقات عند التمرير
-  const services = document.querySelectorAll('.service');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  services.forEach(service => observer.observe(service));
+    /* ===== SERVICES ===== */
+    .services {
+      padding: 70px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-  // معرض الصور الديناميكي (يمكنك إضافة الصور لاحقًا)
-  const serviceGalleries = document.querySelectorAll('.service');
-  serviceGalleries.forEach(service => {
-    const mainImg = service.querySelector('img:first-child');
-    const thumbs = service.querySelectorAll('.gallery img');
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        if(thumb.src) mainImg.src = thumb.src;
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-    });
-  });
-</script>
+    .service {
+      width: 360px;
+      padding: 25px;
+      border-radius: 22px;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-</body>
-</html>
+    .service.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    .service:hover {
+      transform: translateY(-8px);
+    }
+
+    .service img {
+      width: 100%;
+      height: 220px;
+      background: #ccc;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .service h3 {
+      margin: 12px 0;
+      font-size: 1.8rem;
+    }
+
+    .service p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .cleaning { background: linear-gradient(135deg, #00c6ff, #0072ff); }
