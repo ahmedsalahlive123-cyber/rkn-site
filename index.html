@@ -17,14 +17,14 @@
   .service { border-radius:20px; width:350px; text-align:center; padding:25px 20px; box-shadow:0 8px 20px rgba(0,0,0,0.2); transition:all 0.4s ease; opacity:0; transform:translateY(30px); color:white; }
   .service.visible { opacity:1; transform:translateY(0); }
   .service:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 12px 25px rgba(0,0,0,0.3); }
-  .service img { width:100%; height:220px; object-fit:cover; border-radius:15px; margin-bottom:15px; border:2px solid rgba(255,255,255,0.3); }
+  .service img { width:100%; height:220px; object-fit:cover; border-radius:15px; margin-bottom:15px; border:2px solid rgba(255,255,255,0.3); background:#ccc; }
   .service h3 { margin-bottom:15px; font-size:1.6em; }
   .service p { font-size:1em; text-align:left; line-height:1.6; }
   .cleaning { background: linear-gradient(135deg, #00C6FF, #0072FF); }
   .pest { background: linear-gradient(135deg, #FF512F, #DD2476); }
   .moving { background: linear-gradient(135deg, #11998e, #38ef7d); }
   .gallery { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px; }
-  .gallery img { width:80px; height:50px; object-fit:cover; border-radius:10px; cursor:pointer; border:2px solid transparent; transition:0.3s; }
+  .gallery img { width:80px; height:50px; object-fit:cover; border-radius:10px; cursor:pointer; border:2px solid transparent; transition:0.3s; background:#aaa; }
   .gallery img.active, .gallery img:hover { border:2px solid white; transform:scale(1.1); }
   .call-btn, .whatsapp-btn { position:fixed; bottom:25px; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:white; text-decoration:none; box-shadow:0 5px 10px rgba(0,0,0,0.3); z-index:1000; transition:0.3s; }
   .call-btn:hover { transform:scale(1.1); background-color:#218838; }
@@ -51,7 +51,7 @@
 
   <!-- خدمة التنظيف -->
   <div class="service cleaning">
-    <img id="cleaning-main" src="https://images.pexels.com/photos/373489/pexels-photo-373489.jpeg" alt="خدمات التنظيف">
+    <img id="cleaning-main" alt="خدمات التنظيف">
     <h3>خدمات التنظيف</h3>
     <p>
       تنظيف شامل لكل الغرف: المعيشة، المطبخ، الحمام، وغرف النوم.<br>
@@ -61,15 +61,15 @@
       ✅ استخدام معدات حديثة مثل المكانس الكهربائية وأجهزة البخار.
     </p>
     <div class="gallery">
-      <img src="https://images.pexels.com/photos/373489/pexels-photo-373489.jpeg" class="active">
-      <img src="https://images.pexels.com/photos/291645/pexels-photo-291645.jpeg">
-      <img src="https://images.pexels.com/photos/450602/pexels-photo-450602.jpeg">
+      <img>
+      <img>
+      <img>
     </div>
   </div>
 
   <!-- خدمة مكافحة الحشرات -->
   <div class="service pest">
-    <img id="pest-main" src="https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg" alt="مكافحة الحشرات">
+    <img id="pest-main" alt="مكافحة الحشرات">
     <h3>مكافحة الحشرات</h3>
     <p>
       القضاء على جميع أنواع الحشرات: صراصير، نمل، بعوض، وحشرات زاحفة وطائرة.<br>
@@ -79,15 +79,15 @@
       ✅ متابعة دورية عند الطلب لضمان بيئة خالية من الحشرات.
     </p>
     <div class="gallery">
-      <img src="https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg" class="active">
-      <img src="https://images.pexels.com/photos/461429/pexels-photo-461429.jpeg">
-      <img src="https://images.pexels.com/photos/1327765/pexels-photo-1327765.jpeg">
+      <img>
+      <img>
+      <img>
     </div>
   </div>
 
   <!-- خدمة نقل الأثاث -->
   <div class="service moving">
-    <img id="moving-main" src="https://images.pexels.com/photos/533971/pexels-photo-533971.jpeg" alt="نقل الأثاث">
+    <img id="moving-main" alt="نقل الأثاث">
     <h3>نقل الأثاث</h3>
     <p>
       فك وتغليف الأثاث بشكل احترافي باستخدام مواد عازلة.<br>
@@ -97,9 +97,9 @@
       ✅ النقل داخل المدينة أو بين المدن حسب الطلب.
     </p>
     <div class="gallery">
-      <img src="https://images.pexels.com/photos/533971/pexels-photo-533971.jpeg" class="active">
-      <img src="https://images.pexels.com/photos/1643382/pexels-photo-1643382.jpeg">
-      <img src="https://images.pexels.com/photos/296532/pexels-photo-296532.jpeg">
+      <img>
+      <img>
+      <img>
     </div>
   </div>
 
@@ -125,14 +125,14 @@
   }, { threshold: 0.2 });
   services.forEach(service => observer.observe(service));
 
-  // معرض الصور الديناميكي لكل خدمة
+  // معرض الصور الديناميكي (يمكنك إضافة الصور لاحقًا)
   const serviceGalleries = document.querySelectorAll('.service');
   serviceGalleries.forEach(service => {
     const mainImg = service.querySelector('img:first-child');
     const thumbs = service.querySelectorAll('.gallery img');
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
-        mainImg.src = thumb.src;
+        if(thumb.src) mainImg.src = thumb.src;
         thumbs.forEach(t => t.classList.remove('active'));
         thumb.classList.add('active');
       });
@@ -142,3 +142,4 @@
 
 </body>
 </html>
+
