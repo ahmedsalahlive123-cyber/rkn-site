@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: #0a4a8a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #333;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  padding: 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #0a4a8a;
+}
+
+.services {
+  padding: 20px;
+  text-align: center;
+}
+
+.service {
+  background: white;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.service img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.content {
+  padding: 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* زر الاتصال */
+.call-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* زر واتساب */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
