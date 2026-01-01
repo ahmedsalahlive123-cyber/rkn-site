@@ -1,202 +1,45 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RKN للخدمات المنزلية</title>
-  <!-- خطوط Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* الخطوط الأساسية */
-    body {
-      font-family: 'Cairo', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f2f5;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* رأس الصفحة */
-    header {
-      background: linear-gradient(135deg, #007BFF, #00BFFF);
-      color: white;
-      text-align: center;
-      padding: 60px 20px 40px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      animation: fadeDown 1s ease;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.4em;
-      animation: fadeUp 1s ease;
-    }
-
-    nav {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      animation: fadeIn 1.2s ease;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 25px;
-      border-radius: 30px;
-      background-color: rgba(255,255,255,0.2);
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: rgba(255,255,255,0.5);
-      transform: scale(1.05);
-    }
-
-    /* قسم الخدمات */
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 20px;
-    }
-
-    .service {
-      border-radius: 20px;
-      width: 350px;
-      text-align: center;
-      color: white;
-      padding: 25px 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      transition: all 0.4s ease;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .service.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    }
-
-    .service img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin-bottom: 15px;
-      border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .service h3 {
-      margin-bottom: 15px;
-      font-size: 1.8em;
-    }
-
-    .service p {
-      font-size: 1em;
-      text-align: left;
-      line-height: 1.6;
-    }
-
-    /* ألوان احترافية لكل خدمة */
-    .cleaning { background: linear-gradient(135deg, #00C6FF, #0072FF); }
-    .pest { background: linear-gradient(135deg, #FF512F, #DD2476); }
-    .moving { background: linear-gradient(135deg, #11998e, #38ef7d); }
-
-    /* معرض الصور */
-    .gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .gallery img {
-      width: 80px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .gallery img.active,
-    .gallery img:hover {
-      border: 2px solid white;
-      transform: scale(1.1);
-    }
-
-    /* أزرار الاتصال */
-    .call-btn, .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 7px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-
-    .call-btn:hover { transform: scale(1.15); background-color: #218838; }
-    .whatsapp-btn:hover { transform: scale(1.15); background-color: #1ebe57; }
-
-    .call-btn { right: 100px; background-color: #28a745; }
-    .whatsapp-btn { right: 20px; background-color: #25D366; }
-
-    /* الفوتر */
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: #007BFF;
-      color: white;
-      font-size: 1em;
-    }
-
-    /* مؤثرات الحركة */
-    @keyframes fadeDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { 0% { opacity:0;} 100%{opacity:1;} }
-
-    /* متجاوب */
-    @media (max-width: 750px) {
-      .services { flex-direction: column; align-items: center; }
-      nav { flex-direction: column; }
-      .gallery { justify-content: center; }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RKN للخدمات المنزلية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Cairo', sans-serif; margin:0; padding:0; background:#f0f2f5; color:#333; line-height:1.6; }
+  header { background: linear-gradient(135deg, #007BFF, #00BFFF); color:white; text-align:center; padding:50px 20px; }
+  header h1 { margin:0; font-size:2.8em; }
+  header p { margin-top:10px; font-size:1.3em; }
+  nav { margin-top:20px; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+  nav a { color:white; text-decoration:none; padding:10px 20px; border-radius:25px; background: rgba(255,255,255,0.2); transition:0.3s; }
+  nav a:hover { background: rgba(255,255,255,0.5); }
+  .services { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:50px 20px; }
+  .service { border-radius:20px; width:350px; text-align:center; padding:25px 20px; box-shadow:0 8px 20px rgba(0,0,0,0.2); transition:all 0.4s ease; opacity:0; transform:translateY(30px); color:white; }
+  .service.visible { opacity:1; transform:translateY(0); }
+  .service:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 12px 25px rgba(0,0,0,0.3); }
+  .service img { width:100%; height:220px; object-fit:cover; border-radius:15px; margin-bottom:15px; border:2px solid rgba(255,255,255,0.3); }
+  .service h3 { margin-bottom:15px; font-size:1.6em; }
+  .service p { font-size:1em; text-align:left; line-height:1.6; }
+  .cleaning { background: linear-gradient(135deg, #00C6FF, #0072FF); }
+  .pest { background: linear-gradient(135deg, #FF512F, #DD2476); }
+  .moving { background: linear-gradient(135deg, #11998e, #38ef7d); }
+  .gallery { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px; }
+  .gallery img { width:80px; height:50px; object-fit:cover; border-radius:10px; cursor:pointer; border:2px solid transparent; transition:0.3s; }
+  .gallery img.active, .gallery img:hover { border:2px solid white; transform:scale(1.1); }
+  .call-btn, .whatsapp-btn { position:fixed; bottom:25px; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:white; text-decoration:none; box-shadow:0 5px 10px rgba(0,0,0,0.3); z-index:1000; transition:0.3s; }
+  .call-btn:hover { transform:scale(1.1); background-color:#218838; }
+  .whatsapp-btn:hover { transform:scale(1.1); background-color:#1ebe57; }
+  .call-btn { right:90px; background-color:#28a745; }
+  .whatsapp-btn { right:20px; background-color:#25D366; }
+  footer { text-align:center; padding:25px; background:#007BFF; color:white; font-size:1em; }
+  @media(max-width:750px){ .services{flex-direction:column; align-items:center;} nav{flex-direction:column;} .gallery{justify-content:center;} }
+</style>
 </head>
 <body>
 
 <header>
   <h1>RKN للخدمات المنزلية</h1>
-  <p>نقدّم أفضل خدمات التنظيف ومكافحة الحشرات ونقل الأثاث</p>
+  <p>أفضل خدمات التنظيف، مكافحة الحشرات، ونقل الأثاث</p>
   <nav>
     <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
@@ -208,39 +51,94 @@
 
   <!-- خدمة التنظيف -->
   <div class="service cleaning">
-    <img id="cleaning-main" src="https://plus.unsplash.com/premium_photo-1663011218145-c1d0c3ba3542?auto=format&fit=crop&w=800&q=80" alt="خدمات التنظيف" loading="lazy">
+    <img id="cleaning-main" src="https://images.pexels.com/photos/373489/pexels-photo-373489.jpeg" alt="خدمات التنظيف">
     <h3>خدمات التنظيف</h3>
     <p>
-      تنظيف شامل للمنازل، الشقق، الفلل، والمكاتب باستخدام أحدث المعدات ومواد آمنة.<br>
-      ✅ تنظيف الأرضيات، الأسطح، الزجاج، والمطبخ<br>
-      ✅ تنظيف الحمامات والحوائط<br>
-      ✅ إزالة الأتربة والغبار من الأثاث والمفروشات<br>
-      ✅ استخدام معدات حديثة ومواد تنظيف آمنة على الصحة
+      تنظيف شامل لكل الغرف: المعيشة، المطبخ، الحمام، وغرف النوم.<br>
+      ✅ إزالة الغبار من الأرضيات والأسطح والنوافذ والمكاتب.<br>
+      ✅ تنظيف السجاد والستائر والمفروشات بمواد آمنة.<br>
+      ✅ تعقيم الأماكن عالية اللمس مثل مقابض الأبواب.<br>
+      ✅ استخدام معدات حديثة مثل المكانس الكهربائية وأجهزة البخار.
     </p>
     <div class="gallery">
-      <img src="https://plus.unsplash.com/premium_photo-1663011218145-c1d0c3ba3542?auto=format&fit=crop&w=800&q=80" class="active">
-      <img src="https://st2.depositphotos.com/2249091/9721/i/450/depositphotos_97218020-stock-photo-our-mission-is-to-clean.jpg">
-      <img src="https://static9.depositphotos.com/1362922/1086/i/450/depositphotos_10860945-stock-photo-vacuum-cleaner.jpg">
+      <img src="https://images.pexels.com/photos/373489/pexels-photo-373489.jpeg" class="active">
+      <img src="https://images.pexels.com/photos/291645/pexels-photo-291645.jpeg">
+      <img src="https://images.pexels.com/photos/450602/pexels-photo-450602.jpeg">
     </div>
   </div>
 
   <!-- خدمة مكافحة الحشرات -->
   <div class="service pest">
-    <img id="pest-main" src="https://pestech.com/wp-content/uploads/2020/10/iStock-1216750324-1-1024x683.jpg" alt="مكافحة الحشرات" loading="lazy">
+    <img id="pest-main" src="https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg" alt="مكافحة الحشرات">
     <h3>مكافحة الحشرات</h3>
     <p>
-      القضاء على الحشرات نهائيًا بمواد معتمدة وآمنة للأطفال.<br>
-      ✅ التخلص من الحشرات (صراصير، نمل، بقّ الفراش، حشرات زاحفة وطائرة)<br>
-      ✅ رش مواد آمنة ومعتمدة لمنع عودة الحشرات<br>
-      ✅ فحص الأماكن الخطرة وتطبيق الحلول المناسبة
+      القضاء على جميع أنواع الحشرات: صراصير، نمل، بعوض، وحشرات زاحفة وطائرة.<br>
+      ✅ فحص شامل لكل الغرف والزوايا.<br>
+      ✅ استخدام مبيدات آمنة للأطفال والحيوانات.<br>
+      ✅ تقديم نصائح لمنع عودة الحشرات.<br>
+      ✅ متابعة دورية عند الطلب لضمان بيئة خالية من الحشرات.
     </p>
     <div class="gallery">
-      <img src="https://pestech.com/wp-content/uploads/2020/10/iStock-1216750324-1-1024x683.jpg" class="active">
-      <img src="https://cleancoatservices.com/wp-content/uploads/2022/10/IMG_20220627_172249.jpg">
-      <img src="https://homepluscleaning.com/media/images/why-pest-control-is-necessary-after-a-house-clean.jpg">
+      <img src="https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg" class="active">
+      <img src="https://images.pexels.com/photos/461429/pexels-photo-461429.jpeg">
+      <img src="https://images.pexels.com/photos/1327765/pexels-photo-1327765.jpeg">
     </div>
   </div>
 
   <!-- خدمة نقل الأثاث -->
   <div class="service moving">
-    <img id="moving-main" src="https://previews.123rf.com/images/rawpixel/rawpixel1803/rawpixel180301610/96684678-furniture-delivery-service-concept.jpg" alt="نقل الأثاث" loading="
+    <img id="moving-main" src="https://images.pexels.com/photos/533971/pexels-photo-533971.jpeg" alt="نقل الأثاث">
+    <h3>نقل الأثاث</h3>
+    <p>
+      فك وتغليف الأثاث بشكل احترافي باستخدام مواد عازلة.<br>
+      ✅ نقل القطع الكبيرة بأمان دون تلف.<br>
+      ✅ تركيب الأثاث في الموقع الجديد.<br>
+      ✅ فريق مدرب على حمل القطع الثقيلة لتجنب أي أضرار.<br>
+      ✅ النقل داخل المدينة أو بين المدن حسب الطلب.
+    </p>
+    <div class="gallery">
+      <img src="https://images.pexels.com/photos/533971/pexels-photo-533971.jpeg" class="active">
+      <img src="https://images.pexels.com/photos/1643382/pexels-photo-1643382.jpeg">
+      <img src="https://images.pexels.com/photos/296532/pexels-photo-296532.jpeg">
+    </div>
+  </div>
+
+</section>
+
+<a href="tel:0567414217" class="call-btn">📞</a>
+<a href="https://wa.me/966567414217" class="whatsapp-btn">💬</a>
+
+<footer>
+  <p>© 2026 RKN - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+  // ظهور البطاقات عند التمرير
+  const services = document.querySelectorAll('.service');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  services.forEach(service => observer.observe(service));
+
+  // معرض الصور الديناميكي لكل خدمة
+  const serviceGalleries = document.querySelectorAll('.service');
+  serviceGalleries.forEach(service => {
+    const mainImg = service.querySelector('img:first-child');
+    const thumbs = service.querySelectorAll('.gallery img');
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
