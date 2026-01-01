@@ -1,3 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKN للخدمات المنزلية</title>
+  <!-- خطوط Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* الخطوط الأساسية */
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* رأس الصفحة */
+    header {
+      background: linear-gradient(135deg, #007BFF, #00BFFF);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      animation: fadeDown 1s ease;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.4em;
+      animation: fadeUp 1s ease;
+    }
+
+    nav {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background-color: rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255,255,255,0.5);
+      transform: scale(1.05);
+    }
+
+    /* قسم الخدمات */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+    }
+
+    .service {
+      border-radius: 20px;
+      width: 350px;
+      text-align: center;
+      color: white;
+      padding: 25px 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .service.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .service img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .service h3 {
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+
+    .service p {
+      font-size: 1em;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* ألوان احترافية لكل خدمة */
+    .cleaning { background: linear-gradient(135deg, #00C6FF, #0072FF); }
+    .pest { background: linear-gradient(135deg, #FF512F, #DD2476); }
+    .moving { background: linear-gradient(135deg, #11998e, #38ef7d); }
+
+    /* معرض الصور */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 80px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .gallery img.active,
+    .gallery img:hover {
+      border: 2px solid white;
+      transform: scale(1.1);
+    }
+
+    /* أزرار الاتصال */
+    .call-btn, .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 7px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .call-btn:hover { transform: scale(1.15); background-color: #218838; }
+    .whatsapp-btn:hover { transform: scale(1.15); background-color: #1ebe57; }
+
+    .call-btn { right: 100px; background-color: #28a745; }
+    .whatsapp-btn { right: 20px; background-color: #25D366; }
+
+    /* الفوتر */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1em;
+    }
+
+    /* مؤثرات الحركة */
+    @keyframes fadeDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { 0% { opacity:0;} 100%{opacity:1;} }
+
+    /* متجاوب */
+    @media (max-width: 750px) {
+      .services { flex-direction: column; align-items: center; }
+      nav { flex-direction: column; }
+      .gallery { justify-content: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RKN للخدمات المنزلية</h1>
+  <p>نقدّم أفضل خدمات التنظيف ومكافحة الحشرات ونقل الأثاث</p>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+</header>
+
 <section class="services">
 
   <!-- خدمة التنظيف -->
@@ -5,7 +211,7 @@
     <img id="cleaning-main" src="https://plus.unsplash.com/premium_photo-1663011218145-c1d0c3ba3542?auto=format&fit=crop&w=800&q=80" alt="خدمات التنظيف" loading="lazy">
     <h3>خدمات التنظيف</h3>
     <p>
-      تنظيف شامل للمنازل، الشقق، الفلل، والمكاتب باستخدام أحدث المعدات ومواد آمنة.  
+      تنظيف شامل للمنازل، الشقق، الفلل، والمكاتب باستخدام أحدث المعدات ومواد آمنة.<br>
       ✅ تنظيف الأرضيات، الأسطح، الزجاج، والمطبخ<br>
       ✅ تنظيف الحمامات والحوائط<br>
       ✅ إزالة الأتربة والغبار من الأثاث والمفروشات<br>
@@ -23,7 +229,7 @@
     <img id="pest-main" src="https://pestech.com/wp-content/uploads/2020/10/iStock-1216750324-1-1024x683.jpg" alt="مكافحة الحشرات" loading="lazy">
     <h3>مكافحة الحشرات</h3>
     <p>
-      القضاء على الحشرات نهائيًا بمواد معتمدة وآمنة للأطفال.  
+      القضاء على الحشرات نهائيًا بمواد معتمدة وآمنة للأطفال.<br>
       ✅ التخلص من الحشرات (صراصير، نمل، بقّ الفراش، حشرات زاحفة وطائرة)<br>
       ✅ رش مواد آمنة ومعتمدة لمنع عودة الحشرات<br>
       ✅ فحص الأماكن الخطرة وتطبيق الحلول المناسبة
@@ -37,36 +243,4 @@
 
   <!-- خدمة نقل الأثاث -->
   <div class="service moving">
-    <img id="moving-main" src="https://previews.123rf.com/images/rawpixel/rawpixel1803/rawpixel180301610/96684678-furniture-delivery-service-concept.jpg" alt="نقل الأثاث" loading="lazy">
-    <h3>نقل الأثاث</h3>
-    <p>
-      فك، تغليف، ونقل الأثاث باحترافية كاملة بدون أي تلف.  
-      📦 تعبئة الأثاث بمواد عازلة لحمايته<br>
-      🚚 نقل القطع الكبيرة كالأرائك والدواليب<br>
-      🔧 تركيب الأثاث في المكان الجديد بسهولة
-    </p>
-    <div class="gallery">
-      <img src="https://previews.123rf.com/images/rawpixel/rawpixel1803/rawpixel180301610/96684678-furniture-delivery-service-concept.jpg" class="active">
-      <img src="https://www.littleguys.com/wp-content/uploads/2025/03/Trucks_Inline-1.jpg">
-      <img src="https://st2.depositphotos.com/1010613/9653/i/450/depositphotos_96533814-stock-photo-movers-unloading-furniture-from-truck.jpg">
-    </div>
-  </div>
-
-</section>
-
-<!-- JavaScript لتفعيل معرض الصور الديناميكي -->
-<script>
-  const serviceGalleries = document.querySelectorAll('.service');
-  serviceGalleries.forEach(service => {
-    const mainImg = service.querySelector('img:first-child');
-    const thumbs = service.querySelectorAll('.gallery img');
-
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        mainImg.src = thumb.src;
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-    });
-  });
-</script>
+    <img id="moving-main" src="https://previews.123rf.com/images/rawpixel/rawpixel1803/rawpixel180301610/96684678-furniture-delivery-service-concept.jpg" alt="نقل الأثاث" loading="
