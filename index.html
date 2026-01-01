@@ -1,177 +1,202 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>RUKN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #333;
-      direction: rtl;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: #0f2027;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .logo {
-      margin-bottom: 40px;
-    }
-
-    .logo svg {
-      width: 300px;
-      max-width: 90%;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      padding: 10px 22px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.15);
-      font-size: 16px;
-      display: inline-block;
-    }
-
-    /* ===== SERVICES ===== */
-    .services {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .services h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    .services-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .service {
-      background: #fff;
-      width: 320px;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      text-align: right;
-    }
-
-    .service h3 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #0f2027;
-    }
-
-    .service p {
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0f2027;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUKN للخدمات المنزلية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Cairo', sans-serif;
+  margin:0; padding:0; background:#f0f2f5; color:#333; line-height:1.6;
+}
+header {
+  background: linear-gradient(135deg,#007BFF,#00BFFF);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+header svg {
+  width:150px;
+  height:50px;
+  margin-bottom:15px;
+}
+.services {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  padding:50px 20px;
+}
+.service {
+  border-radius:20px;
+  width:350px;
+  text-align:center;
+  padding:25px 20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  transition:all 0.4s ease;
+  opacity:0;
+  transform:translateY(30px);
+  color:white;
+}
+.service.visible { opacity:1; transform:translateY(0); }
+.service:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 12px 25px rgba(0,0,0,0.3);}
+.service img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
+  border:2px solid rgba(255,255,255,0.3);
+  background:#ccc;
+}
+.service h3 { margin-bottom:15px; font-size:1.6em; }
+.service p { font-size:1em; text-align:left; line-height:1.6; }
+.cleaning { background: linear-gradient(135deg,#00C6FF,#0072FF); }
+.pest { background: linear-gradient(135deg,#FF512F,#DD2476); }
+.moving { background: linear-gradient(135deg,#11998e,#38ef7d); }
+.gallery {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+}
+.gallery img {
+  width:80px;
+  height:50px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:0.3s;
+  background:#aaa;
+}
+.gallery img.active,
+.gallery img:hover {
+  border:2px solid white;
+  transform:scale(1.1);
+}
+.call-btn, .whatsapp-btn {
+  position:fixed;
+  bottom:25px;
+  width:65px; height:65px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px; color:white; text-decoration:none;
+  box-shadow:0 5px 10px rgba(0,0,0,0.3);
+  z-index:1000;
+  transition:0.3s;
+}
+.call-btn:hover { transform:scale(1.1); background-color:#218838; }
+.whatsapp-btn:hover { transform:scale(1.1); background-color:#1ebe57; }
+.call-btn { right:90px; background-color:#28a745; }
+.whatsapp-btn { right:20px; background-color:#25D366; }
+footer { text-align:center; padding:25px; background:#007BFF; color:white; font-size:1em; }
+@media(max-width:750px){ .services{flex-direction:column; align-items:center;} .gallery{justify-content:center;} }
+</style>
 </head>
-
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
-  <div class="logo">
-    <!-- شعار SVG -->
-    <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-      <rect
-        x="4" y="4"
-        rx="18" ry="18"
-        width="312" height="112"
-        fill="#0f2027"
-        stroke="#ffffff"
-        stroke-width="4" />
-
-      <text
-        x="160"
-        y="78"
-        text-anchor="middle"
-        font-size="56"
-        font-weight="700"
-        letter-spacing="10"
-        fill="#ffffff">
-        RUKN
-      </text>
-    </svg>
-  </div>
-
-  <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#">من نحن</a>
-    <a href="#">تواصل معنا</a>
-  </nav>
+  <!-- شعار RUKN ثابت -->
+  <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="35" font-size="35" fill="white" font-family="Cairo, sans-serif" font-weight="700">RUKN</text>
+  </svg>
 </header>
 
-<!-- ===== SERVICES ===== -->
 <section class="services">
-  <h2>خدماتنا</h2>
 
-  <div class="services-container">
-
-    <div class="service">
-      <h3>خدمات التنظيف</h3>
-      <p>
-        نقدم خدمات تنظيف شاملة للمنازل، الشقق، الفلل
-        والمكاتب باستخدام أدوات حديثة ومنظفات
-        آمنة وصديقة للبيئة، مع الاهتمام بأدق التفاصيل
-        لضمان أعلى مستوى من النظافة.
-      </p>
+  <!-- خدمة التنظيف -->
+  <div class="service cleaning">
+    <img id="cleaning-main" alt="خدمات التنظيف">
+    <h3>خدمات التنظيف</h3>
+    <p>
+      تنظيف شامل لكل الغرف: المعيشة، المطبخ، الحمام، وغرف النوم.<br>
+      ✅ إزالة الغبار من الأرضيات والأسطح والنوافذ والمكاتب.<br>
+      ✅ تنظيف السجاد والستائر والمفروشات بمواد آمنة.<br>
+      ✅ تعقيم الأماكن عالية اللمس مثل مقابض الأبواب.<br>
+      ✅ استخدام معدات حديثة مثل المكانس الكهربائية وأجهزة البخار.
+    </p>
+    <div class="gallery">
+      <img>
+      <img>
+      <img>
     </div>
-
-    <div class="service">
-      <h3>مكافحة الحشرات</h3>
-      <p>
-        نوفر حلول متكاملة للقضاء على جميع أنواع
-        الحشرات مثل الصراصير، النمل، البق
-        باستخدام مبيدات معتمدة وآمنة للأطفال
-        مع خطط وقائية لمنع عودتها.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>نقل الأثاث</h3>
-      <p>
-        خدمة نقل أثاث احترافية تشمل فك الأثاث،
-        تغليفه بمواد حماية عالية الجودة، نقله
-        وتركيبه مرة أخرى بأمان تام دون أي تلف.
-      </p>
-    </div>
-
   </div>
+
+  <!-- خدمة مكافحة الحشرات -->
+  <div class="service pest">
+    <img id="pest-main" alt="مكافحة الحشرات">
+    <h3>مكافحة الحشرات</h3>
+    <p>
+      القضاء على جميع أنواع الحشرات: صراصير، نمل، بعوض، وحشرات زاحفة وطائرة.<br>
+      ✅ فحص شامل لكل الغرف والزوايا.<br>
+      ✅ استخدام مبيدات آمنة للأطفال والحيوانات.<br>
+      ✅ تقديم نصائح لمنع عودة الحشرات.<br>
+      ✅ متابعة دورية عند الطلب لضمان بيئة خالية من الحشرات.
+    </p>
+    <div class="gallery">
+      <img>
+      <img>
+      <img>
+    </div>
+  </div>
+
+  <!-- خدمة نقل الأثاث -->
+  <div class="service moving">
+    <img id="moving-main" alt="نقل الأثاث">
+    <h3>نقل الأثاث</h3>
+    <p>
+      فك وتغليف الأثاث بشكل احترافي باستخدام مواد عازلة.<br>
+      ✅ نقل القطع الكبيرة بأمان دون تلف.<br>
+      ✅ تركيب الأثاث في الموقع الجديد.<br>
+      ✅ فريق مدرب على حمل القطع الثقيلة لتجنب أي أضرار.<br>
+      ✅ النقل داخل المدينة أو بين المدن حسب الطلب.
+    </p>
+    <div class="gallery">
+      <img>
+      <img>
+      <img>
+    </div>
+  </div>
+
 </section>
 
-<!-- ===== FOOTER ===== -->
+<a href="tel:0567414217" class="call-btn">📞</a>
+<a href="https://wa.me/966567414217" class="whatsapp-btn">💬</a>
+
 <footer>
-  © 2026 RUKN – جميع الحقوق محفوظة
+  <p>© 2026 RUKN - جميع الحقوق محفوظة</p>
 </footer>
+
+<script>
+  // ظهور البطاقات عند التمرير
+  const services = document.querySelectorAll('.service');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  services.forEach(service => observer.observe(service));
+
+  // معرض الصور الديناميكي (يمكنك إضافة الصور لاحقًا)
+  const serviceGalleries = document.querySelectorAll('.service');
+  serviceGalleries.forEach(service => {
+    const mainImg = service.querySelector('img:first-child');
+    const thumbs = service.querySelectorAll('.gallery img');
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        if(thumb.src) mainImg.src = thumb.src;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
