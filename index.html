@@ -6,185 +6,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f2f4f7;
-    }
-
-    header {
-      background: #0f2027;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    svg {
-      width: 320px;
-      max-width: 90%;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-    <rect
-      x="4" y="4" rx="18" ry="18"
-      width="312" height="112"
-      fill="#0f2027"
-      stroke="#ffffff"
-      stroke-width="4" />
-
-    <text
-      x="160"
-      y="78"
-      text-anchor="middle"
-      font-size="56"
-      font-weight="700"
-      letter-spacing="10"
-      fill="#ffffff">
-      RUKN
-    </text>
-  </svg>
-</header>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RUKN</title>
-
-  <!-- خطوط -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: #f2f4f7;
+      background: #f4f6f8;
       color: #333;
+      direction: rtl;
     }
 
     /* ===== HEADER ===== */
     header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      padding: 80px 20px 60px;
+      background: #0f2027;
+      padding: 80px 20px;
       text-align: center;
     }
 
-    /* ===== LOGO SVG ===== */
-    .logo-wrapper {
-      display: flex;
-      justify-content: center;
+    .logo {
+      margin-bottom: 40px;
     }
 
-    .logo-svg {
-      width: 320px;
+    .logo svg {
+      width: 300px;
       max-width: 90%;
-    }
-
-    nav {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 30px;
+      margin: 0 10px;
+      padding: 10px 22px;
+      border-radius: 20px;
       background: rgba(255,255,255,0.15);
-      transition: 0.3s;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,0.35);
+      font-size: 16px;
+      display: inline-block;
     }
 
     /* ===== SERVICES ===== */
     .services {
-      padding: 70px 20px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .services-container {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .service {
-      width: 360px;
+      background: #fff;
+      width: 320px;
       padding: 25px;
-      border-radius: 22px;
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      transition: 0.4s;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .service.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service:hover {
-      transform: translateY(-8px);
-    }
-
-    .service img {
-      width: 100%;
-      height: 220px;
-      background: #ccc;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: right;
     }
 
     .service h3 {
-      margin: 12px 0;
-      font-size: 1.8rem;
+      margin-top: 0;
+      font-size: 22px;
+      color: #0f2027;
     }
 
     .service p {
-      font-size: 1rem;
       line-height: 1.8;
-    }
-
-    .cleaning { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-    .pest     { background: linear-gradient(135deg, #ff512f, #dd2476); }
-    .moving   { background: linear-gradient(135deg, #11998e, #38ef7d); }
-
-    /* ===== FLOAT BUTTONS ===== */
-    .call-btn, .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: #fff;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: 0.3s;
-      z-index: 1000;
-    }
-
-    .call-btn { right: 95px; background: #28a745; }
-    .whatsapp-btn { right: 20px; background: #25D366; }
-
-    .call-btn:hover,
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
+      font-size: 15px;
     }
 
     /* ===== FOOTER ===== */
@@ -192,38 +88,32 @@
       background: #0f2027;
       color: #fff;
       text-align: center;
-      padding: 25px;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
-  <!-- شعار SVG مدمج -->
-  <div class="logo-wrapper">
-    <svg class="logo-svg"
-      viewBox="0 0 320 120"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="RUKN Logo">
-
+  <div class="logo">
+    <!-- شعار SVG -->
+    <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
       <rect
-        x="4"
-        y="4"
-        rx="18"
-        ry="18"
-        width="312"
-        height="112"
+        x="4" y="4"
+        rx="18" ry="18"
+        width="312" height="112"
         fill="#0f2027"
         stroke="#ffffff"
-        stroke-width="4"/>
+        stroke-width="4" />
 
       <text
         x="160"
         y="78"
         text-anchor="middle"
-        font-family="Montserrat, Arial, sans-serif"
         font-size="56"
         font-weight="700"
         letter-spacing="10"
@@ -234,66 +124,54 @@
   </div>
 
   <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="contact.html">تواصل معنا</a>
+    <a href="#">الرئيسية</a>
+    <a href="#">من نحن</a>
+    <a href="#">تواصل معنا</a>
   </nav>
 </header>
 
+<!-- ===== SERVICES ===== -->
 <section class="services">
+  <h2>خدماتنا</h2>
 
-  <div class="service cleaning">
-    <img alt="خدمات التنظيف">
-    <h3>خدمات التنظيف</h3>
-    <p>
-      نقدم خدمات تنظيف شاملة للمنازل والمكاتب
-      تشمل الأرضيات، المطابخ، الحمامات
-      وتعقيم الأسطح باستخدام مواد آمنة
-      ومعدات حديثة.
-    </p>
+  <div class="services-container">
+
+    <div class="service">
+      <h3>خدمات التنظيف</h3>
+      <p>
+        نقدم خدمات تنظيف شاملة للمنازل، الشقق، الفلل
+        والمكاتب باستخدام أدوات حديثة ومنظفات
+        آمنة وصديقة للبيئة، مع الاهتمام بأدق التفاصيل
+        لضمان أعلى مستوى من النظافة.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>مكافحة الحشرات</h3>
+      <p>
+        نوفر حلول متكاملة للقضاء على جميع أنواع
+        الحشرات مثل الصراصير، النمل، البق
+        باستخدام مبيدات معتمدة وآمنة للأطفال
+        مع خطط وقائية لمنع عودتها.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>نقل الأثاث</h3>
+      <p>
+        خدمة نقل أثاث احترافية تشمل فك الأثاث،
+        تغليفه بمواد حماية عالية الجودة، نقله
+        وتركيبه مرة أخرى بأمان تام دون أي تلف.
+      </p>
+    </div>
+
   </div>
-
-  <div class="service pest">
-    <img alt="مكافحة الحشرات">
-    <h3>مكافحة الحشرات</h3>
-    <p>
-      حلول فعالة للقضاء على جميع أنواع الحشرات
-      باستخدام مبيدات معتمدة وآمنة
-      مع فحص شامل لمنع عودة الحشرات.
-    </p>
-  </div>
-
-  <div class="service moving">
-    <img alt="نقل الأثاث">
-    <h3>نقل الأثاث</h3>
-    <p>
-      خدمة نقل أثاث متكاملة تشمل الفك،
-      التغليف، النقل والتركيب
-      مع الحفاظ الكامل على سلامة الأثاث.
-    </p>
-  </div>
-
 </section>
 
-<a href="tel:0567414217" class="call-btn">📞</a>
-<a href="https://wa.me/966567414217" class="whatsapp-btn">💬</a>
-
+<!-- ===== FOOTER ===== -->
 <footer>
   © 2026 RUKN – جميع الحقوق محفوظة
 </footer>
-
-<script>
-  const services = document.querySelectorAll('.service');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  services.forEach(service => observer.observe(service));
-</script>
 
 </body>
 </html>
